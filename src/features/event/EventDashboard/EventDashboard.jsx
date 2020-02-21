@@ -77,6 +77,7 @@ class EventDashboard extends Component {
             selectEvent={this.handleSelectEvent}
             deleteEvent={this.handleDeleteEvent}
           />
+          
         </Grid.Column>
         <Grid.Column width={6}>
           <Button
@@ -84,6 +85,7 @@ class EventDashboard extends Component {
             positive
             content="Create Event"
           />
+          
           {isOpen && (
             <EventForm
               key={selectedEvent ? selectedEvent.id : 0}
