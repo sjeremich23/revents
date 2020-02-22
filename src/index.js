@@ -4,14 +4,22 @@ import "./index.css";
 import App from "./app/layout/App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router } from "react-router-dom";
+import { Provider } from "react-redux";
+import { configureStore } from "./app/store/configureStore";
+
+const store = configureStore();
+
+console.log(store.getState());
 
 const rootEL = document.getElementById("root");
 
 let render = () => {
   ReactDOM.render(
-    <Router>
-      <App />
-    </Router>,
+    <Provider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>,
     rootEL
   );
 };
